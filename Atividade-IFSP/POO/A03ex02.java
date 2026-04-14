@@ -4,7 +4,6 @@ public class A03ex02 {
     public static void main(String[] args) {
         String titulo = "Pedro Ribeiro";
         
-        // Solicita a largura da parede
         String inputLargura = JOptionPane.showInputDialog(null, 
             "Informe a largura da parede (em metros):", 
             titulo, 
@@ -17,7 +16,6 @@ public class A03ex02 {
         
         double largura = Double.parseDouble(inputLargura);
         
-        // Solicita a altura da parede
         String inputAltura = JOptionPane.showInputDialog(null, 
             "Informe a altura da parede (em metros):", 
             titulo, 
@@ -30,13 +28,10 @@ public class A03ex02 {
         
         double altura = Double.parseDouble(inputAltura);
         
-        // Calcula a área da parede
         double area = largura * altura;
         
-        // Calcula a quantidade de tijolos necessários (20 tijolos por metro quadrado)
         int quantidadeTijolos = (int) (area * 20);
         
-        // Exibe os resultados
         String resultado = String.format(
             "Área da parede: %.2f m²\nQuantidade de tijolos necessários: %d", 
             area, 
