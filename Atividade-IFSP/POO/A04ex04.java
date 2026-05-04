@@ -54,7 +54,7 @@ public class A04ex04 {
                 break;
             }
         }
-        
+
         if (encontrou) {
             String resposta_formatada = respostaPositivaPadrão.replace("[...]", palavraEncontrada);
             System.out.println("→ " + resposta_formatada);
@@ -64,3 +64,4 @@ public class A04ex04 {
         System.out.println();
     }
 }
+// Pedro Ribeiro Gomes da Silva
