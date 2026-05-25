@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Venda de Ingressos - Com Navbar e Popovers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        .form-title {
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .btn-custom {
+            margin: 0.5rem;
+        }
+        .event-list {
+            margin-top: 3rem;
+        }
+        .event-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .event-price {
+            color: #28a745;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">🎫 Ingressos Premium</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#eventos">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formulario">Comprar</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mais
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Meus Ingressos</a></li>
+                            <li><a class="dropdown-item" href="#">Histórico</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Suporte</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">👤 Conta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="bg-gradient-primary text-white py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">🎭 Bem-vindo ao Sistema de Ingressos</h1>
+            <p class="lead">Compre seus ingressos com segurança e rapidez</p>
+            <a href="#formulario" class="btn btn-light btn-lg">Comprar Agora</a>
+        </div>
+    </div>
+
+    <!-- Lista de Eventos -->
+    <div id="eventos" class="container event-list">
+        <h2 class="mb-4 text-center">Próximos Eventos</h2>
+        
+        <div class="event-card">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>🎸 Festival de Rock - Bandas Clássicas</h5>
+                    <p>Apresentação das maiores bandas de rock de todos os tempos.</p>
+                    <small class="text-muted">📅 15/06/2026 às 20:00 | 📍 Arena da Cidade</small>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="event-price">R$ 150,00</p>
+                    <button class="btn btn-sm btn-primary">Selecionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>🎤 Show de Stand-up Comedy</h5>
+                    <p>Noite de muitas risadas com os melhores comediantes do Brasil.</p>
+                    <small class="text-muted">📅 22/06/2026 às 19:30 | 📍 Teatro Municipal</small>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="event-price">R$ 80,00</p>
+                    <button class="btn btn-sm btn-primary">Selecionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>🎼 Concerto Sinfônico</h5>
+                    <p>Orquestra executando as maiores composições clássicas mundiais.</p>
+                    <small class="text-muted">📅 28/06/2026 às 19:00 | 📍 Auditório Nacional</small>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="event-price">R$ 200,00</p>
+                    <button class="btn btn-sm btn-primary">Selecionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário de Compra -->
+    <div id="formulario" class="container">
+        <div class="form-section">
+            <h2 class="form-title">🎟️ Comprar Ingressos</h2>
+            
+            <form id="ingressosForm">
+                <!-- Seleção de Evento -->
+                <div class="mb-3">
+                    <label for="evento" class="form-label">Selecione o Evento:</label>
+                    <select class="form-select" id="evento" required>
+                        <option value="">-- Escolha um evento --</option>
+                        <option value="rock">Festival de Rock - Bandas Clássicas</option>
+                        <option value="comedy">Show de Stand-up Comedy</option>
+                        <option value="sinfonica">Concerto Sinfônico</option>
+                    </select>
+                </div>
+
+                <!-- Quantidade de Ingressos -->
+                <div class="mb-3">
+                    <label for="quantidade" class="form-label">Quantidade de Ingressos:</label>
+                    <input type="number" class="form-control" id="quantidade" min="1" max="10" value="1" required>
+                </div>
+
+                <!-- Tipo de Ingresso -->
+                <div class="mb-3">
+                    <label class="form-label">Tipo de Ingresso:</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoIngresso" id="inteira" value="inteira" checked>
+                            <label class="form-check-label" for="inteira">
+                                Inteira (100% do valor)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoIngresso" id="meia" value="meia">
+                            <label class="form-check-label" for="meia">
+                                Meia-entrada (50% de desconto)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoIngresso" id="isento" value="isento">
+                            <label class="form-check-label" for="isento">
+                                Isento (Gratuito)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dados Pessoais -->
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome Completo:</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Ex: João da Silva" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="tel" class="form-control" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+
+                <!-- Botões com Popovers -->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="reset" class="btn btn-outline-secondary btn-custom" 
+                            id="btnLimpar"
+                            data-bs-toggle="popover" 
+                            data-bs-title="Limpar Formulário"
+                            data-bs-content="Clique para limpar todos os dados do formulário e começar novamente.">
+                        Limpar
+                    </button>
+                    
+                    <button type="submit" class="btn btn-primary btn-custom" 
+                            id="btnComprar"
+                            data-bs-toggle="popover" 
+                            data-bs-title="Confirmar Compra"
+                            data-bs-content="Clique para confirmar sua compra e proceder para o pagamento.">
+                        Comprar Ingresso
+                    </button>
+                    
+                    <button type="button" class="btn btn-info btn-custom" 
+                            id="btnAjuda"
+                            data-bs-toggle="popover" 
+                            data-bs-title="Precisa de Ajuda?"
+                            data-bs-content="Entre em contato conosco pelo email contato@ingressosonline.com ou ligue (83) 99999-9999">
+                        Ajuda
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 Sistema de Venda de Ingressos. Todos os direitos reservados.</p>
+            <p class="mb-2">📧 contato@ingressosonline.com.br | 📱 (83) 99999-9999</p>
+            <p><small>Desenvolvido por Pedro Ribeiro</small></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Inicializar Popovers
+        document.addEventListener('DOMContentLoaded', function() {
+            const popoverElements = [
+                document.getElementById('btnLimpar'),
+                document.getElementById('btnComprar'),
+                document.getElementById('btnAjuda')
+            ];
+
+            popoverElements.forEach(element => {
+                new bootstrap.Popover(element, {
+                    trigger: 'hover'
+                });
+            });
+
+            // Validação do Formulário
+            document.getElementById('ingressosForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const evento = document.getElementById('evento').value;
+                const quantidade = document.getElementById('quantidade').value;
+                const nome = document.getElementById('nome').value;
+                
+                if (evento && quantidade && nome) {
+                    alert(`Compra realizada com sucesso!\n\nEvento: ${evento}\nQuantidade: ${quantidade}\nNome: ${nome}\n\nVerifique seu email para os detalhes.`);
+                    this.reset();
+                } else {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
